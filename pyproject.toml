@@ -1,11 +1,23 @@
 [tool.poetry]
-name = "Python-FastAPI-Firebase-Authentication"
+name = "python_fastapi_firebase_authentication"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Rahul<rahulprakash11@gmail.com>"]
+
+[tool.poetry.scripts]
+cli_script = "packagename.cli:main"
+dev = "python_fastapi_firebase_authentication.core.settings:dev"
+prod = "python_fastapi_firebase_authentication.core.settings:prod"
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = "^0.79.0"
+uvicorn = {extras = ["standard"], version = "^0.18.2"}
+beanie = "^1.11.7"
+loguru = "^0.6.0"
+firebase-admin = "^5.2.0"
+email-validator = "^1.2.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
