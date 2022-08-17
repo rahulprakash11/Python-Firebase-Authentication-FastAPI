@@ -4,7 +4,7 @@ from beanie import PydanticObjectId
 # from loguru import logger
 
 from ..models.authProvider import AuthProvider
-from ....model.authorisedUser import UpdateAuthProvider
+from ....model.model import UpdateAuthProvider
 
 
 class MongoDbAuthProvider:

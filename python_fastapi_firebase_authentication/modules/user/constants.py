@@ -7,7 +7,7 @@ class UserConstant:
             # custom = "custom"
 
         class VerificationType:
-            banker = "banker"
+            player = "player"
             admin = "admin"
 
 

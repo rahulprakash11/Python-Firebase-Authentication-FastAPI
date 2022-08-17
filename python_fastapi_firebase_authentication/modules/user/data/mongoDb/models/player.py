@@ -16,7 +16,7 @@ class Contact(BaseModel):
     email: Optional[str]
 
 
-class Banker(Document):
+class Player(Document):
     
     # ref user table
     userId : PydanticObjectId
@@ -30,7 +30,7 @@ class Banker(Document):
     status : Optional[int] = None
 
     class Settings:
-        name = "bankers" # mongodb collection name
+        name = "players" # mongodb collection name
         
 
     class Config:

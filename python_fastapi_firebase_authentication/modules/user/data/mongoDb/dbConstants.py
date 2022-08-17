@@ -18,8 +18,8 @@ class MongoDbConstant:
             statusMask = 0xf
 
         class Role:
-            banker = 0x1
-            bankerMask = 0x1
+            player = 0x1
+            playerMask = 0x1
             admin = 0x2
             adminMask = 0x2
             roleMask = 0xf

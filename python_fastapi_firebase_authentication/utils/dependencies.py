@@ -4,10 +4,10 @@ from firebase_admin import auth
 from loguru import logger
 
 from ..modules.user.data.mongoDb.interface.authProvider import MongoDbAuthProvider
-from ..modules.user.data.mongoDb.interface.banker import MongoDbBanker
+from ..modules.user.data.mongoDb.interface.player import MongoDbPlayer
 
 mongoDbAuthProvider = MongoDbAuthProvider()
-mongoDbBanker = MongoDbBanker()
+mongoDbPlayer = MongoDbPlayer()
 
 async def decodeToken(token : str = Header()):
     try:
@@ -21,6 +21,6 @@ async def decodeToken(token : str = Header()):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="user not authorised")
 
 
-async def currentBanker(userId : PydanticObjectId = Depends(decodeToken)):
-    banker = await mongoDbBanker.getByUserId(userId=userId)
-    return banker
+async def currentPlayer(userId : PydanticObjectId = Depends(decodeToken)):
+    player = await mongoDbPlayer.getByUserId(userId=userId)
+    return player

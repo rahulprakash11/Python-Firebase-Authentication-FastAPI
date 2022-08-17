@@ -4,14 +4,14 @@ from beanie import init_beanie
 from ...env import DB_NAME, MONGODB_URL
 
 from ....modules.user.data.mongoDb.models.authProvider import AuthProvider
-from ....modules.user.data.mongoDb.models.banker import Banker
+from ....modules.user.data.mongoDb.models.player import Player
 from ....modules.user.data.mongoDb.models.user import User
 
 
 __models = [
     AuthProvider,
     User,
-    Banker
+    Player
 ]
 
 mongodb_client:AsyncIOMotorClient = AsyncIOMotorClient(MONGODB_URL)
