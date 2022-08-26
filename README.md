@@ -164,7 +164,7 @@ TO SET your project ID:
 gcloud config set project PROJECT-ID
 > gcloud config set project auth-test
 
-**TO BUILD:
+TO BUILD:
 gcloud builds submit --tag gcr.io/PROJECT-ID/container-name
 > gcloud builds submit --tag gcr.io/auth-test/auth-api-container
 
