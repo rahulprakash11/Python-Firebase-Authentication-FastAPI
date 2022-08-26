@@ -193,7 +193,7 @@ For any questions or suggestions send a mail to junkielabs.dev@gmail.com or chat
 
 # License
 
-[MIT License](https://github.com/RahulPrakash11/Python-FastAPI-Firebase-Authentication/blob/main/Licence).
+[MIT License](https://github.com/RahulPrakash11/Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy/blob/main/LICENSE).
 
 
 <br>
