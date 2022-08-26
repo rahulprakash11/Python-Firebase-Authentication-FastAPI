@@ -10,7 +10,7 @@ A user authentication system, implementing Google's Firebase_admin auth modeule 
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=yellow)
 <br>
-![GitHub](https://img.shields.io/github/license/RahulPrakash11/Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy)
+![GitHub](https://img.shields.io/github/license/RahulPrakash11/Python-Firebase-Authentication-FastAPI)
 ![](https://img.shields.io/badge/Python-3.8-red)
 
 
@@ -193,7 +193,7 @@ For any questions or suggestions send a mail to junkielabs.dev@gmail.com or chat
 
 # License
 
-[MIT License](https://github.com/RahulPrakash11/Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy/blob/main/LICENSE).
+[MIT License](https://github.com/RahulPrakash11/Python-Firebase-Authentication-FastAPI/blob/main/LICENSE).
 
 
 <br>
