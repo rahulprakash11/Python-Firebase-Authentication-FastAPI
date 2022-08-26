@@ -10,7 +10,7 @@ A user authentication system, implementing Google's Firebase_admin auth modeule 
 ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=yellow)
 <br>
 ![GitHub](https://img.shields.io/github/license/RahulPrakash11/Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy)
-
+![](https://img.shields.io/badge/Python-3.8-red)
 
 <img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"><img src="https://firebase.google.com/static/images/homepage/cloud-plus-firebase_1x.png" width="15%" height="15%"><img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"> 
 
