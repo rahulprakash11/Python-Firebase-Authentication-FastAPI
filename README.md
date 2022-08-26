@@ -12,9 +12,7 @@ A user authentication system, implementing Google's Firebase_admin auth modeule 
 ![GitHub](https://img.shields.io/github/license/RahulPrakash11/Python-FastAPI-Firebase-Authentication)
 
 
-<img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"> 
-<img src="https://firebase.google.com/static/images/homepage/cloud-plus-firebase_1x.png" width="15%" height="15%">
-<img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"> 
+<img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"><img src="https://firebase.google.com/static/images/homepage/cloud-plus-firebase_1x.png" width="15%" height="15%"><img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"> 
 
 <br>
 
