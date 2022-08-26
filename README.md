@@ -1,4 +1,4 @@
-# FastAPI-Firebase-Authentication
+# FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy
 A user authentication system, implementing Google's Firebase_admin auth modeule inside python's FastAPI based backend.
 
 
@@ -9,12 +9,11 @@ A user authentication system, implementing Google's Firebase_admin auth modeule 
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=yellow)
 <br>
-![GitHub](https://img.shields.io/github/license/RahulPrakash11/Python-FastAPI-Firebase-Authentication)
+![GitHub](https://img.shields.io/github/license/RahulPrakash11/Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy)
+![](https://img.shields.io/badge/Python-3.8-red)
 
 
-<img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"> 
-<img src="https://firebase.google.com/static/images/homepage/cloud-plus-firebase_1x.png" width="15%" height="15%">
-<img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"> 
+<img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"><img src="https://firebase.google.com/static/images/homepage/cloud-plus-firebase_1x.png" width="15%" height="15%"><img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"> 
 
 <br>
 
@@ -121,7 +120,7 @@ In response you get details of new player created in your database which can be 
 
 <br>
 
-# <img src="https://fastapi.tiangolo.com/img/icon-white.svg" width="5%" height="5%">  Setup FastApi RESTapi  <img src="https://fastapi.tiangolo.com/img/icon-white.svg" width="5%" height="5%">
+# <svg fill="none" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 154"><circle cx="77" cy="77" fill="#05998b" r="77"/><path d="M81.375 18.667l-38.75 70H77.5l-3.875 46.666 38.75-70H77.5z" fill="#fff"/></svg>  Setup FastApi RESTapi  <svg fill="none" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 154"><circle cx="77" cy="77" fill="#05998b" r="77"/><path d="M81.375 18.667l-38.75 70H77.5l-3.875 46.666 38.75-70H77.5z" fill="#fff"/></svg>
 
   To get more familier with Fastapi you can go through their [docs](https://fastapi.tiangolo.com/).
   
@@ -164,7 +163,7 @@ TO SET your project ID:
 gcloud config set project PROJECT-ID
 > gcloud config set project auth-test
 
-**TO BUILD:
+TO BUILD:
 gcloud builds submit --tag gcr.io/PROJECT-ID/container-name
 > gcloud builds submit --tag gcr.io/auth-test/auth-api-container
 
@@ -193,7 +192,7 @@ For any questions or suggestions send a mail to junkielabs.dev@gmail.com or chat
 
 # License
 
-[MIT License](https://github.com/RahulPrakash11/Python-FastAPI-Firebase-Authentication/blob/main/Licence).
+[MIT License](https://github.com/RahulPrakash11/Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy/blob/main/LICENSE).
 
 
 <br>
