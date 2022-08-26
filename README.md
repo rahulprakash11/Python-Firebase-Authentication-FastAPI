@@ -1,4 +1,4 @@
-# FastAPI-Firebase-Authentication
+# Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy
 A user authentication system, implementing Google's Firebase_admin auth modeule inside python's FastAPI based backend.
 
 
@@ -9,7 +9,7 @@ A user authentication system, implementing Google's Firebase_admin auth modeule 
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=yellow)
 <br>
-![GitHub](https://img.shields.io/github/license/RahulPrakash11/Python-FastAPI-Firebase-Authentication)
+![GitHub](https://img.shields.io/github/license/RahulPrakash11/Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy)
 
 
 <img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"><img src="https://firebase.google.com/static/images/homepage/cloud-plus-firebase_1x.png" width="15%" height="15%"><img src=assets\img\thul-876298A8-C3E1-487D-8AD6920174E16D78.png width="8%" height="8%"> 
