@@ -1,6 +1,5 @@
 {
     "logger": {
-      "path": "/var/logs",
       "filename": "access.log",
       "level": "debug",
       "rotation": "20 days",

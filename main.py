@@ -1,19 +1,19 @@
 
-from pathlib import Path
 from firebase_admin import initialize_app
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .core.env import TITLE, DEBUG, ALLOWED_ORIGINS
-from .core.custom_logging import CustomizeLogger
-from .core.data.mongodb.db import close_db, init_db, mongodb_client
-from .modules.user.route.endpoints import userRouter
+from python_fastapi_firebase_authentication.core.env import TITLE, DEBUG, ALLOWED_ORIGINS, BASE_DIR
+from python_fastapi_firebase_authentication.core.custom_logging import CustomizeLogger
+from python_fastapi_firebase_authentication.core.data.mongodb.db import init_db, mongodb_client
+from python_fastapi_firebase_authentication.modules.user.route.endpoints import userRouter
+from python_fastapi_firebase_authentication.modules.dummy.endpoints import dummyRouter
 
 
 # logger = logging.getLogger(__name__)
 
-config_path=Path(__file__).parent.with_name("logging_config.json")
+config_path=BASE_DIR.with_name("logging_config.json")
 
 
 app = FastAPI(title=TITLE, debug=DEBUG)
@@ -26,6 +26,7 @@ def read_root():
 
 
 app.include_router(router=userRouter)
+app.include_router(router=dummyRouter)
 
 
 app.add_middleware(
@@ -44,10 +45,3 @@ async def app_init():
     await init_db(mongodb_client)
     initialize_app()
     logger.debug("---The Database setup is complete!---")
-
- 
-@app.on_event("shutdown")
-async def shutdown():
-    logger.info("db connection shutdown")
-    await close_db(mongodb_client)
-    logger.info("MongoDB connection closed")

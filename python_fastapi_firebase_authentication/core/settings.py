@@ -1,31 +1,36 @@
-import subprocess
-from loguru import logger
+from pathlib import Path
+from dotenv import load_dotenv
+from functools import lru_cache
+from typing import Optional
+from pydantic import BaseSettings
 
 
-def dev():
-    logger.debug(
-        f"------running dev!----"
-    )
-    cmd1='copy .env.dev .env'
-    subprocess.run(['powershell','-command',cmd1])
-    logger.info(
-        f"------Copying .env.dev into .env file!----"
-    )
+BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
-    # cmd2='(poetry run serve-uvicorn)'
-    cmd2='(python serve_uvicorn.py)'
-    subprocess.run(['powershell','-command',cmd2])
-    logger.info(
-        f"------Copying .env.dev into .env file!!!!----"
-    )
+load_dotenv(BASE_DIR.with_name(".env"))
 
 
-def prod():
-    cmd1='copy .env.prod .env'
-    subprocess.run(['powershell','-command',cmd1])
-    logger.info(
-        f"------Copying .env.prod into .env file!----"
-    )
+class GlobalConfig(BaseSettings):
+    """Global configurations."""
+    TITLE : str
+    SECRET_KEY : Optional[str]
+    WEB_API_KEY : Optional[str]
+    MONGODB_URL : Optional[str]
+    DB_NAME : Optional[str]
+    FASTAPI_DEBUG : bool = False
+    CORS_ALLOWED_ORIGINS : str
 
-    cmd2='(python serve_uvicorn.py)'
-    subprocess.run(['powershell','-command',cmd2])
+    UVI_PORT : Optional[int] = None
+    UVI_SERVER_HOST : Optional[str] = None
+    UVI_RELOAD : Optional[bool] = False
+    UVI_LOG_LEVEL : Optional[str] = "info"
+    UVI_ACCESS_LOG : Optional[bool] = False
+    ENV : str
+
+
+@lru_cache()
+def get_settings():
+    return GlobalConfig()
+
+
+settings = get_settings()

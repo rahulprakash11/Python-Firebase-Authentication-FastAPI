@@ -6,18 +6,21 @@ authors = ["Rahul<rahulprakash11@gmail.com>"]
 
 [tool.poetry.scripts]
 cli_script = "packagename.cli:main"
-dev = "python_fastapi_firebase_authentication.core.settings:dev"
-prod = "python_fastapi_firebase_authentication.core.settings:prod"
+dev = "python_fastapi_firebase_authentication.core.configEnv:dev"
+prod = "python_fastapi_firebase_authentication.core.configEnv:prod"
+test = "python_fastapi_firebase_authentication.core.configEnv:test"
+server = "serve_uvicorn:uvi_server"
 
 
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.79.0"
-uvicorn = {extras = ["standard"], version = "^0.18.2"}
 beanie = "^1.11.7"
 loguru = "^0.6.0"
 firebase-admin = "^5.2.0"
 email-validator = "^1.2.1"
+uvicorn = {extras = ["standard"], version = "^0.18.2"}
+gunicorn = "^20.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

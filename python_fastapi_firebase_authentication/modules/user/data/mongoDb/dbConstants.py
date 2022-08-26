@@ -8,6 +8,7 @@ class MongoDbConstant:
         class Providers:
             google = "google.com"
             phone = "phone"
+            password = "password"
 
     class User:
         class Status:

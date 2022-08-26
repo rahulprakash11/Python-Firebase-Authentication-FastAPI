@@ -356,6 +356,20 @@ grpcio = ">=1.48.0"
 protobuf = ">=3.12.0"
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "h11"
 version = "0.13.0"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
@@ -791,7 +805,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "ff582afe5165ace34612cc36f8a8f9f866a7e3da1f1829ea1cd6fd8efd7eecce"
+content-hash = "f8d3c9d83dd10f6ad6ff8b33a850dece6fdc0be2ac8d949fc5913fe89520e2ff"
 
 [metadata.files]
 anyio = [
@@ -897,6 +911,7 @@ google-resumable-media = [
 googleapis-common-protos = []
 grpcio = []
 grpcio-status = []
+gunicorn = []
 h11 = [
     {file = "h11-0.13.0-py3-none-any.whl", hash = "sha256:8ddd78563b633ca55346c8cd41ec0af27d3c79931828beffb46ce70a379e7442"},
     {file = "h11-0.13.0.tar.gz", hash = "sha256:70813c1135087a248a4d38cc0e1a0181ffab2188141a93eaf567940c3957ff06"},

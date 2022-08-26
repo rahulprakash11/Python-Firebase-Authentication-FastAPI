@@ -1,31 +1,22 @@
-# from msilib.schema import Environment
-import os
-from dotenv import load_dotenv
+
 from loguru import logger
 
-logger.debug(
-        f"------Setting up environment!----"
-    )
+from .settings import settings, BASE_DIR
 
-load_dotenv(".env")
 
-TITLE=os.environ.get("TITLE")
-ENV = os.environ.get('ENV')
-MONGODB_URL=os.environ["MONGODB_URL"]
-DB_NAME=os.environ.get("DB_NAME")
-DEBUG=os.environ.get("DEBUG", default=True)
-GOOGLE_APPLICATION_CREDENTIALS=os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
-ALLOWED_ORIGINS=os.environ.get("CORS_ALLOWED_ORIGINS").split(",")
+TITLE = settings.TITLE
+SECRET_KEY = settings.SECRET_KEY
+WEB_API_KEY = settings.WEB_API_KEY
+ENV = settings.ENV
+MONGODB_URL = settings.MONGODB_URL
+DB_NAME = settings.DB_NAME
+DEBUG = settings.FASTAPI_DEBUG
+ALLOWED_ORIGINS = settings.CORS_ALLOWED_ORIGINS.split(",")
 
-UVI_PORT=int(os.environ.get("UVI_PORT", default=8000))
-UVI_SERVER_HOST=os.environ.get("UVI_SERVER_HOST", default="0.0.0.0")
-UVI_LOG_LEVEL=os.environ.get("UVI_LOG_LEVEL", default="info")
-UVI_ACCESS_LOG=os.environ.get("UVI_ACCESS_LOG", default=False)
+UVI_PORT = settings.UVI_PORT
+UVI_SERVER_HOST = settings.UVI_SERVER_HOST
+UVI_RELOAD = settings.UVI_RELOAD
+UVI_LOG_LEVEL = settings.UVI_LOG_LEVEL
+UVI_ACCESS_LOG = settings.UVI_ACCESS_LOG
 
-logger.info(
-        f"------Working inside {ENV} environment!----"
-    )
-
-logger.info(
-        f"------ALLOWED_ORIGINS : {ALLOWED_ORIGINS}, {type(ALLOWED_ORIGINS)}----"
-    )
+logger.info(f"------Working inside {settings.ENV} environment!----")

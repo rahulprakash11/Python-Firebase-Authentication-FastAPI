@@ -134,3 +134,5 @@ dmypy.json
 
 # zappa stuff
 zappa_settings.json
+
+firebase_credentials.json

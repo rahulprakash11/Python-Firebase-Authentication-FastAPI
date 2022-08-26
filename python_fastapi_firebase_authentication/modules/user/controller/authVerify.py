@@ -2,7 +2,7 @@
 from typing import Optional
 from fastapi import APIRouter, status, HTTPException
 from loguru import logger
-from firebase_admin import auth
+from firebase_admin import auth, exceptions
 
 from ..data.mongoDb.interface.authProvider import MongoDbAuthProvider
 from ..data.mongoDb.interface.player import MongoDbPlayer
@@ -27,7 +27,7 @@ mongoDbPlayer = MongoDbPlayer()
 mongoDbUser = MongoDbUser()
 
 
-@router.post("/verify",tags=["verify"] , status_code=status.HTTP_200_OK, response_model=AuthorisedUserOut , response_model_exclude_none=True)
+@router.post("/verify", status_code=status.HTTP_200_OK, response_model=AuthorisedUserOut , response_model_exclude_none=True)
 async def verify(pModel : UserAuthRequest):
 
     try:
@@ -67,6 +67,11 @@ async def verify(pModel : UserAuthRequest):
             # phone = deToken.get("phone")
             identifier = deToken.get("phone")
             contact.phone = identifier
+
+        elif provider == MongoDbConstant.AuthProvider.Providers.password: # phone
+            # phone = deToken.get("phone")
+            identifier = deToken.get("email")
+            contact.email = identifier
         else:
             logger.exception(f"---Invalid provider : {provider}---")
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Invalid provider")
@@ -127,21 +132,27 @@ async def verify(pModel : UserAuthRequest):
             if provider == MongoDbConstant.AuthProvider.Providers.google: # google.com
                 modelPlayer = Player(userId=dbUser.id, contact=contact, name=name, verifiedEmail=identifier, imageUrl=deToken["picture"])
             elif provider == MongoDbConstant.AuthProvider.Providers.phone: # phone
-                modelPlayer = Player(userId=dbUser.id, contact=contact, name=name, verifiedPhone=identifier) 
+                modelPlayer = Player(userId=dbUser.id, contact=contact, name=name, verifiedPhone=identifier)
+            elif provider == MongoDbConstant.AuthProvider.Providers.password: # phone
+                modelPlayer = Player(userId=dbUser.id, contact=contact, name=name, verifiedPhone=identifier)
+            else:
+                raise HTTPException(status_code=status.HTTP_405_METHOD_NOT_ALLOWED , detail="login method is not set")
             dbPlayer = await mongoDbPlayer.add(player=modelPlayer)
         else:
             if provider == MongoDbConstant.AuthProvider.Providers.google: # google.com
                 await dbPlayer.set({Player.verifiedEmail : identifier})
             elif provider == MongoDbConstant.AuthProvider.Providers.phone: # phone
-                await dbPlayer.set({Player.verifiedPhone : identifier})  
-        
-        
+                await dbPlayer.set({Player.verifiedPhone : identifier})
+            elif provider == MongoDbConstant.AuthProvider.Providers.password: # phone
+                await dbPlayer.set({Player.verifiedEmail : identifier})
+            else:
+                raise HTTPException(status_code=status.HTTP_405_METHOD_NOT_ALLOWED , detail="login method is not set")
+
         logger.info(f"---player id : {dbPlayer.id}")
 
         response = AuthorisedUserOut(user=dbUser, player=dbPlayer)
         return response
-
     except Exception as err:
         logger.error(err)
-        raise err
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=err.args)
 
