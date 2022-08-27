@@ -121,11 +121,13 @@ In response you get details of new player created in your database which can be 
 
 <br>
 
-# <svg fill="none" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 154"><circle cx="77" cy="77" fill="#05998b" r="77"/><path d="M81.375 18.667l-38.75 70H77.5l-3.875 46.666 38.75-70H77.5z" fill="#fff"/></svg>  Setup FastApi RESTapi  <svg fill="none" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 154"><circle cx="77" cy="77" fill="#05998b" r="77"/><path d="M81.375 18.667l-38.75 70H77.5l-3.875 46.666 38.75-70H77.5z" fill="#fff"/></svg>
+# <svg fill="none" height="30" width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 154"><circle cx="77" cy="77" fill="#05998b" r="77"/><path d="M81.375 18.667l-38.75 70H77.5l-3.875 46.666 38.75-70H77.5z" fill="#fff"/></svg>  Setup FastApi RESTapi  <svg fill="none" height="30" width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 154"><circle cx="77" cy="77" fill="#05998b" r="77"/><path d="M81.375 18.667l-38.75 70H77.5l-3.875 46.666 38.75-70H77.5z" fill="#fff"/></svg>
 
   To get more familier with Fastapi you can go through their [docs](https://fastapi.tiangolo.com/).
   
   Here, we will be using **[uvicorn](https://www.uvicorn.org/deployment/)** to serve our FastApi backend.
+
+  We have also used **Beanie** as an ODM interface to MongoDb, with async capabilities. "Beanie - is an Asynchronous Python object-document mapper (ODM) for MongoDB, based on **Motor** and **Pydantic**."You can follow the Beanie's documentation [**here**](https://roman-right.github.io/beanie/).
 
 <br>
 

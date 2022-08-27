@@ -42,7 +42,6 @@ class CustomizeLogger:
         logging_config = config.get('logger')
 
         logger = cls.customize_logging(
-            logging_config.get('path') ,
             level=logging_config.get('level'),
             retention=logging_config.get('retention'),
             rotation=logging_config.get('rotation'),
@@ -53,6 +52,8 @@ class CustomizeLogger:
     @classmethod
     def customize_logging(cls,
             level: str,
+            rotation: str,
+            retention: str,
             format: str
     ):
 
