@@ -1,6 +1,6 @@
 # Python-FastAPI-Firebase-Authentication-Google-Cloud-Run-Deploy
 
-A user authentication system, implementing Google's Firebase_admin auth modeule inside python's FastAPI based backend.
+A user authentication system, implementing Google's Firebase_admin auth module inside python's FastAPI based backend. Furthe we have deployed the code on Google Cloud Run using Docker.
 
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)

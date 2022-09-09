@@ -2,7 +2,7 @@
 from typing import Optional
 from fastapi import APIRouter, status, HTTPException
 from loguru import logger
-from firebase_admin import auth, exceptions
+from firebase_admin import auth
 
 from ..data.mongoDb.interface.authProvider import MongoDbAuthProvider
 from ..data.mongoDb.interface.player import MongoDbPlayer
@@ -134,7 +134,7 @@ async def verify(pModel : UserAuthRequest):
             elif provider == MongoDbConstant.AuthProvider.Providers.phone: # phone
                 modelPlayer = Player(userId=dbUser.id, contact=contact, name=name, verifiedPhone=identifier)
             elif provider == MongoDbConstant.AuthProvider.Providers.password: # phone
-                modelPlayer = Player(userId=dbUser.id, contact=contact, name=name, verifiedPhone=identifier)
+                modelPlayer = Player(userId=dbUser.id, contact=contact, name=name, verifiedEmail=identifier)
             else:
                 raise HTTPException(status_code=status.HTTP_405_METHOD_NOT_ALLOWED , detail="login method is not set")
             dbPlayer = await mongoDbPlayer.add(player=modelPlayer)

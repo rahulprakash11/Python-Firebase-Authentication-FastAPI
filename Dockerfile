@@ -42,4 +42,4 @@ COPY . .
 EXPOSE $PORT
 
 
-CMD exec gunicorn --bind :$PORT --workers 1 --worker-class uvicorn.workers.UvicornWorker main:app
+CMD exec gunicorn --bind :$PORT --workers 2 --worker-class uvicorn.workers.UvicornWorker main:app

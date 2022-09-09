@@ -53,7 +53,8 @@ async def login_user(pModel:Login):
         #check for errors in result
         # logger.info(r.json())
         if 'error' in r.json().keys():
-            return {'status':'error','message':r.json()['error']['message']}
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={'status':'error','message':r.json()['error']['message']})
+            # return {'status':'error','message':r.json()['error']['message']}
         #if the registration succeeded
         if 'idToken' in r.json().keys() :
                 return {'status':'success','idToken':r.json()['idToken']}
